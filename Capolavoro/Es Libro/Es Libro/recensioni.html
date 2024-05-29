@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recensioni</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="recensioniStyle.css">
+
+</head>
+<body>
+   
+    <div class="container">
+   
+        <h1>Lascia una recensione</h1>
+   
+        <form id="reviewForm">
+   
+            <div class="rating">
+   
+                <input type="radio" id="star5" name="rating" value="5">
+                <label for="star5" class="fas fa-star" onclick="setRating(5)"></label>
+   
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" class="fas fa-star" onclick="setRating(4)"></label>
+   
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" class="fas fa-star" onclick="setRating(3)"></label>
+   
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" class="fas fa-star" onclick="setRating(2)"></label>
+   
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" class="fas fa-star" onclick="setRating(1)"></label>
+   
+            </div>
+   
+        </form>
+   
+        <button onclick="submitReview()">Invia recensione</button>
+    
+    </div>
+
+    <script>
+    
+        let valutazione = 0;
+
+        function setRating(rating) {
+    
+            valutazione = rating;
+    
+        }
+
+        function submitReview() {
+    
+            if (valutazione === 0) {
+    
+                window.alert("Per favore, seleziona una valutazione.");
+    
+            } else {
+                
+                window.alert("Grazie per la recensione ;)");
+                window.location.href = "pagina.html";
+            
+            }
+        
+        }
+        
+        let docTitle = document.title;
+
+        window.addEventListener("blur", function() {tornaAllaPagina()});
+        window.addEventListener("focus", function() {ripristinaTitoloPagina()});
+
+        function tornaAllaPagina(){
+
+            document.title = "Torna Indietro📚";
+
+        }
+
+        function ripristinaTitoloPagina(){
+            
+            document.title = docTitle;
+
+        }
+    
+    </script>
+
+</body>
+</html>

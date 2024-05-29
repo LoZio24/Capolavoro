@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleLibreria.css">
+    <title>Libreria</title>
+
+</head>
+<body>
+
+    <div class="container2">
+        <div class="navbar">
+    
+            <img src="logo.png" alt="LogoSito" class="logo">
+    
+            <nav>
+    
+                <ul>
+                    <li><a href="pagina.html" class="link">Home</a></li>
+                    <li><a href="#" class="link">Libreria</a></li>
+                    <li><a href="login.html" class="link">Login/Sign up</a></li>
+                    <li><a href="contatti.html" class="link">Contatti</a></li>
+                </ul>
+    
+            </nav>
+    
+        </div>
+    </div>
+    
+    <h1>Libreria</h1>
+    
+    <div class="paragrafo">
+
+        <p>Qui potrai aggiungere tutti i libri che hai letto in passato inserendo il loro
+            titolo, l'autore, la casa editrice e l'anno di pubblicazione. I libri inseriti verranno automaticamente visualizzati
+            all'interno del box qui sotto e, potrai, in qualsiasi momento, eliminare uno o tutti i libri presenti nella libreria
+        </p>
+
+    </div>
+
+    <div class="containerLibri">
+
+        <b><div class="lista" id="para"></div></b>
+
+    </div>
+
+    <div class="bottoni">
+        
+        <button onclick="aggiungiLibro()">Aggiungi Libro</button>
+        <button onclick="cancellaLibroSingolo()">Cancella Libro</button>
+        <button onclick="cancellaLibri()">Cancella Tutti i libri</button>
+
+    </div>
+
+    <script>
+
+        var libri = [];
+
+        function mostraLibri() {
+            
+            let listaLibri = document.getElementById("para");
+            listaLibri.innerHTML = ""; 
+
+            for (let i = 0; i < libri.length; i++) {
+              
+                let libro = libri[i];
+                let libroElement = document.createElement("div");
+                libroElement.textContent = "Autore: " + libro.autore + ", Titolo: " + libro.titolo + ", Anno: " + libro.anno + ", Casa Editrice: " + (libro.casaEditrice);
+                libroElement.classList.add("libro"); 
+                listaLibri.appendChild(libroElement);
+            
+            }
+        
+        }
+
+        function aggiungiLibro() {
+           
+            let autore = prompt("Inserisci l'autore:");
+            let titolo = prompt("Inserisci il titolo:");
+            let anno = prompt("Inserisci l'anno di uscita:");
+            let casaEditrice = prompt("Inserisci la casa editrica:");
+
+            let nuovoLibro = {
+           
+                autore: autore,
+                titolo: titolo,
+                anno: anno,
+                casaEditrice: casaEditrice
+           
+            };
+
+            libri.push(nuovoLibro);
+            mostraLibri();
+        
+        }
+
+        function cancellaLibri() {
+        
+            libri = [];
+            mostraLibri();
+        
+        }
+
+        function cancellaLibroSingolo() {
+            
+            let position;
+            
+            do {
+                
+                position = parseInt(prompt("Inserisci la posizione del libro da eliminare")) - 1;
+                
+                if (position < 0 || position >= libri.length || isNaN(position)) {
+                
+                    alert("Posizione non valida. Riprova.");
+                
+                }
+            
+            } while (position < 0 || position >= libri.length || isNaN(position));
+
+            libri.splice(position, 1);
+            mostraLibri();
+            
+        }
+    
+    </script>
+
+</body>
+</html>

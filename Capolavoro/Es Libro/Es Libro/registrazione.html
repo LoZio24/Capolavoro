@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleRegistrazione.css">
+    <title>Registrazione</title>
+
+</head>
+<body>
+    
+    <div class="container">
+        <div class="wrapper">
+    
+            <form action="">
+    
+                <h1>Registrazione</h1>
+    
+                <div class="row">
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Nome" required>
+                        <i class='bx bxs-user'></i>
+    
+                    </div>
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Cognome" required>
+                        <i class='bx bxs-user'></i>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Luogo di nascita" required>
+                        <i class='bx bxs-map'></i>
+    
+                    </div>
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Provincia" required>
+                        <i class='bx bxs-map'></i>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Data di nascita (gg/mm/aa)" required>
+                        <i class='bx bxs-calendar'></i>
+    
+                    </div>
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Indirizzo" required>
+                        <i class='bx bxs-map-pin'></i>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="CAP" required>
+                        <i class='bx bxs-map-pin'></i>
+    
+                    </div>
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Località" required>
+                        <i class='bx bxs-map-pin'></i>
+    
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Provincia" required>
+                        <i class='bx bxs-map'></i>
+    
+                    </div>
+                    <div class="input-box">
+    
+                        <input type="text" placeholder="Cellulare" required>
+                        <i class='bx bxs-phone'></i>
+    
+                    </div>
+                </div>
+                <div class="input-box">
+    
+                    <input type="email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+    
+                </div>
+                <div class="row">
+                    <div class="input-box full-width">
+                      
+                        <input type="password" placeholder="Password" required>
+                        <i class='bx bxs-lock'></i>
+                    
+                    </div>
+                
+                </div>
+                <div class="row">
+                    <div class="input-box full-width">
+                
+                        <input type="password" placeholder="Conferma Password" required>
+                        <i class='bx bxs-lock'></i>
+                
+                    </div>
+                </div>          
+    
+                <button type="submit" class="btn">Registrati</button>
+
+                <div class="register-link">
+    
+                    <p>Hai già un account? <a href="login.html">Accedi</a></p>
+    
+                </div>                             
+    
+            </form>
+    
+        </div>
+    </div>
+   
+    <script>
+
+        let docTitle = document.title;
+
+        window.addEventListener("blur", function() {tornaAllaPagina()});
+        window.addEventListener("focus", function() {ripristinaTitoloPagina()});
+
+        function tornaAllaPagina(){
+
+            document.title = "Torna Indietro📚";
+
+        }
+
+        function ripristinaTitoloPagina(){
+            
+            document.title = docTitle;
+
+        }
+
+        document.querySelector('.btn').addEventListener('click', function(event) {
+    
+            event.preventDefault();
+
+            const inputs = document.querySelectorAll('input[required]');
+            let allInputsFilled = true;
+
+            inputs.forEach(function(input) {
+                
+                if (input.value.trim() === "") {
+                  
+                    allInputsFilled = false;
+                
+                }
+           
+            });
+
+            if (allInputsFilled) {
+                
+                console.log('Account creato!');
+                window.location.href = "pagina.html";
+            
+            } else {
+                
+                alert("Per favore, compila tutti i campi.");
+            
+            }
+
+        });
+       
+    </script>
+
+</body>
+</html>

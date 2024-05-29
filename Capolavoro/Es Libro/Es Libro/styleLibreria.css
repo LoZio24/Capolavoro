@@ -1,0 +1,171 @@
+body {
+
+    font-family: Arial, sans-serif;
+    background-image: url(Libro2.jpeg);
+    background-size: cover;
+
+}
+
+.container{
+
+    width: 100%;
+    height: 100vh;
+    background-color: #3d3d3d;
+    background-position: center;
+    background-size: cover;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+
+}
+
+.container2{
+
+    width: 100%;
+    height: auto;
+    background-color: #171717;
+    background-position: center;
+    background-size: cover;
+    padding-left: 0.1%;
+    padding-right: 1%;
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    box-sizing: border-box;
+    border-radius: 12px;
+
+}
+
+.containerLibri{
+
+    max-width: 30%;
+    margin: 50px auto;
+    background-color: #171717;
+    padding: 20px;
+    border-radius: 20px;
+
+}
+
+.navbar{
+
+    height: 15%;
+    display: flex;
+    align-items: center;
+
+}
+
+.logo{
+
+    width: 55px;
+    cursor: pointer;
+    border-radius: 20%;
+
+}
+
+nav{
+
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li{
+
+    list-style: none;
+    display: inline-block;
+    margin-left: 60px;
+
+}
+
+nav ul li a{
+
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+nav ul li a:hover{
+
+    color: red;
+    transition: 0.6s;
+
+}
+
+.row{
+
+    display: flex;
+    height: 80%;
+    align-items: center;
+
+}
+
+.lista{
+
+    text-align: center;
+    color: whitesmoke;
+
+}
+
+.col{
+
+    flex-basis: 50%;
+    align-items: left;
+
+}
+
+h1{
+
+    color: #171717;
+    font-size: 100px;
+    text-align: center;
+
+}
+
+.paragrafo{
+
+    color: #171717;
+    text-align: center;
+    font-size: 16px;
+    line-height: 15px;
+    font-weight: bold;
+    max-width: 35%;
+    margin: 50px auto;
+
+}
+
+button{
+
+    width: 180px;
+    color: whitesmoke;
+    font-size: 12px;
+    padding: 12px 0;
+    background: #171717;
+    border: 0;
+    border-radius: 20px;
+    outline: none;
+    margin-top: 30px;
+    font-weight: bold;
+    transition: transform 1s;
+
+}
+
+button a{
+
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    transition: transform 0.6s;
+
+}
+
+button:hover{
+
+    transform: translateY(-10px);
+
+}
+
+.bottoni{
+
+    text-align: center;
+
+}

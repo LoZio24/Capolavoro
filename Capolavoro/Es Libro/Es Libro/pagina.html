@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libreria</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="navbar">                    
+    
+            <img src="logo.png" alt="LogoSito" class="logo">
+    
+            <nav>
+    
+                <ul>
+                    <li><a href="#" class="link">Home</a></li>
+                    <li><a href="libreria.html" class="link">Libreria</a></li>
+                    <li><a href="login.html" class="link">Login/Sign up</a></li>
+                    <li><a href="contatti.html" class="link">Contatti</a></li>
+                </ul>
+    
+            </nav>
+    
+        </div>
+        <div class="row"> 
+            <div class="col">
+            
+                <h1>Libri per la Vita</h1>
+                <p>
+                    Benvenuti su "Libri per la vita", il luogo dove ogni pagina è un nuovo viaggio e ogni libro una porta per 
+                    l'infinita conoscenza. Qui potrete aggiungere i vostri libri preferiti alla vostra biblioteca virtuale, 
+                    rimuovere quelli letti o condividere le vostre opinioni e recensioni. Esplorate le caratteristiche uniche di 
+                    ogni opera e lasciatevi ispirare dalla magia delle parole. Siete pronti a scoprire il vostro prossimo grande 
+                    amore letterario
+                </p>
+
+                <button type="button"><a href="recensioni.html">Recensioni</a></button>
+            
+            </div>
+            <div class="col">
+                <div class="card card1">
+                </div>
+                <div class="card card2">
+                </div>                
+                <div class="card card3">
+                </div>
+                <div class="card card4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let docTitle = document.title;
+
+        window.addEventListener("blur", function() {tornaAllaPagina()});
+        window.addEventListener("focus", function() {ripristinaTitoloPagina()});
+
+        function tornaAllaPagina(){
+
+            document.title = "Torna Indietro📚";
+
+        }
+
+        function ripristinaTitoloPagina(){
+            
+            document.title = docTitle;
+
+        }
+        
+            
+    </script>
+
+</body>
+</html>
